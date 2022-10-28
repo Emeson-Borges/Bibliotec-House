@@ -1,0 +1,39 @@
+object DM_conexao: TDM_conexao
+  OldCreateOrder = False
+  Height = 339
+  Width = 467
+  object conexao: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Pro' +
+        'jeto Pessoal\Banco de Dados\DB.BIBLIOTECA.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    Left = 80
+    Top = 64
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 272
+    Top = 104
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    VendorLib = 'C:\Program Files (x86)\Firebird\Firebird_2_5\bin\fbclient.dll'
+    Left = 272
+    Top = 192
+  end
+  object qryLivros: TFDQuery
+    Connection = conexao
+    SQL.Strings = (
+      'SELECT * FROM LIVROS')
+    Left = 80
+    Top = 136
+  end
+  object DSLivros: TDataSource
+    DataSet = qryLivros
+    Left = 88
+    Top = 216
+  end
+end

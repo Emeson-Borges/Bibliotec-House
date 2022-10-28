@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/06/14 14:03:26.000.970,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 14:11:36.000.834,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 14:19:40.000.955,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/15 10:20:34.000.604,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/15 10:21:35.000.961,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\ProjetoPessoal.pas</Transaction>
+    <Transaction>2022/06/15 10:21:35.000.961,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\ProjetoPessoal.dfm</Transaction>
+    <Transaction>2022/06/15 10:22:48.000.454,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\Project2_pessoal.dproj</Transaction>
+    <Transaction>2022/06/15 10:24:20.000.068,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\Project2_pessoal.dproj=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Project2_pessoal.dproj</Transaction>
+    <Transaction>2022/06/15 10:24:41.000.134,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\ProjetoPessoal.dfm=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\ProjetoPessoal.dfm</Transaction>
+    <Transaction>2022/06/15 10:24:41.000.134,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projects\ProjetoPessoal.pas=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\ProjetoPessoal.pas</Transaction>
+    <Transaction>2022/06/15 13:39:27.000.774,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas</Transaction>
+    <Transaction>2022/06/15 13:39:45.000.347,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas</Transaction>
+    <Transaction>2022/06/15 13:51:02.000.300,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\TFinicial.pas=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas</Transaction>
+    <Transaction>2022/06/15 13:51:02.000.300,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\TFinicial.dfm=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.dfm</Transaction>
+    <Transaction>2022/06/15 20:32:36.000.453,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas</Transaction>
+    <Transaction>2022/06/15 21:01:28.000.102,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.dfm=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\UniT_relatorio.dfm</Transaction>
+    <Transaction>2022/06/15 21:01:28.000.102,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\UniT_relatorio.pas</Transaction>
+    <Transaction>2022/06/17 08:59:18.000.687,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit2.pas</Transaction>
+    <Transaction>2022/06/17 08:59:34.000.527,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit2.pas=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\TFprevia.pas</Transaction>
+    <Transaction>2022/06/17 08:59:34.000.527,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit2.dfm=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\TFprevia.dfm</Transaction>
+    <Transaction>2022/06/21 15:25:16.000.279,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas</Transaction>
+    <Transaction>2022/06/21 16:13:45.000.414,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas</Transaction>
+    <Transaction>2022/06/21 16:14:26.000.452,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\conexao_banco.dfm=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.dfm</Transaction>
+    <Transaction>2022/06/21 16:14:26.000.452,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\conexao_banco.pas=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas</Transaction>
+    <Transaction>2022/06/22 08:48:23.000.677,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\conexao_banco.pas=</Transaction>
+    <Transaction>2022/06/22 10:50:49.000.955,=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas</Transaction>
+    <Transaction>2022/06/22 11:00:10.000.345,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.pas=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\U_DMconexao.pas</Transaction>
+    <Transaction>2022/06/22 11:00:10.000.345,C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\Unit1.dfm=C:\Users\Emeson Borges\Documents\Embarcadero\Studio\Projeto Pessoal\U_DMconexao.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

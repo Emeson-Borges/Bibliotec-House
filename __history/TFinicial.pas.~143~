@@ -1,0 +1,221 @@
+unit TFinicial;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.Buttons, System.ImageList, Vcl.ImgList,
+  Data.DB, Vcl.Grids, Vcl.DBGrids, JvExStdCtrls, JvCombobox, JvDBCombobox;
+
+type
+  TFrm_inicio = class(TForm)
+    btnEditar: TButton;
+    btnCancelar: TButton;
+    btnRelatorio: TButton;
+    txtTitulo: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    txtEditora: TEdit;
+    Label6: TLabel;
+    label7: TLabel;
+    Label8: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    Label5: TLabel;
+    txtUnidade: TEdit;
+    BtnCadastrar: TButton;
+    Image1: TImage;
+    BtnLogout: TButton;
+    BalloonHint1: TBalloonHint;
+    Panel1: TPanel;
+    ProgressBar1: TProgressBar;
+    JvDBCBcategoria: TJvDBComboBox;
+    JvDBCBidioma: TJvDBComboBox;
+    JvDBCBaquisicao: TJvDBComboBox;
+    bntSalvar: TButton;
+    DS_dados: TDataSource;
+    Image2: TImage;
+    Label9: TLabel;
+    Label10: TLabel;
+    procedure Image1Click(Sender: TObject);
+    procedure BtnLogoutClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure BtnCadastrarClick(Sender: TObject);
+    procedure bntSalvarClick(Sender: TObject);
+    procedure btnRelatorioClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_inicio: TFrm_inicio;
+
+implementation
+
+{$R *.dfm}
+
+uses ProjetoPessoal, TFprevia, U_DMconexao, UniT_relatorio;
+
+
+procedure TFrm_inicio.bntSalvarClick(Sender: TObject);
+
+var
+  i : integer;
+begin
+//Código do botão para cadastrar
+
+
+  ProgressBar1.Visible := True;
+  while ProgressBar1.Position < 100 do
+     begin
+       if ProgressBar1.Position < 50 then
+        begin
+          ProgressBar1.Position := ProgressBar1.Position + 1;
+          sleep(20)
+        end
+
+        else
+        begin
+                ProgressBar1.Position := ProgressBar1.Position + 1;
+                sleep(5)
+            end
+        end;
+
+
+        // For para verificar se os itens estão vazios
+        for I := 0 to Frm_inicio.componentcount -1 do
+        begin
+            if ((Frm_inicio.Components[i] is TEdit) and
+               ((Frm_inicio.Components[i] as TEdit).Tag = 1) and
+               ((Frm_inicio.Components[i] as TEdit).Text = EmptyStr)) or
+
+               ((Frm_inicio.Components[i] is TJvDBComboBox) and
+               ((Frm_inicio.Components[i] as TJvDBComboBox).Tag = 1) and
+               ((Frm_inicio.Components[i] as TJvDBComboBox).Text = EmptyStr)) or
+
+               ((Frm_inicio.Components[i] is TDateTimePicker) and
+               ((Frm_inicio.Components[i] as TDateTimePicker).Tag = 1) and
+               (Datetostr((Frm_inicio.Components[i] as TDateTimePicker).Date) = EmptyStr)) then
+
+              begin
+                ProgressBar1.Visible := False;
+                ShowMessage('Campos obrigatórios não preenchidos!');
+                exit;
+              end
+        end;
+
+
+            // ESSE CÓDIGO TA PEGANDO O VALOR DO CAMPOS QUE NÃO SÃO DO TIPO DB
+            DS_dados.DataSet.FieldByName('titulo').AsString     := txtTitulo.Text;
+            DS_dados.DataSet.FieldByName('editora').AsString    := txtEditora.Text;
+            DS_dados.DataSet.FieldByName('unidade').AsString    := txtUnidade.Text;
+            DS_dados.DataSet.FieldByName('data').AsDateTime     := DateTimePicker1.DateTime;
+
+
+            if DS_dados.DataSet.State in [dsInsert,dsEdit] then
+
+            DS_dados.DataSet.Post;
+
+            ProgressBar1.Visible        := False;
+            txtTitulo.Enabled           := False;
+            txtEditora.Enabled          := False;
+            txtUnidade.Enabled          := False;
+            JvDBCBcategoria.Enabled     := False;
+            JvDBCBidioma.Enabled        := False;
+            JvDBCBaquisicao.Enabled     := False;
+end;
+
+procedure TFrm_inicio.BtnCadastrarClick(Sender: TObject);
+begin
+    DS_dados.DataSet.Append;
+
+    bntSalvar.Enabled         := True;
+    btnCancelar.Enabled       := True;
+    //habilitar as caixas
+    txtTitulo.Enabled         := True;
+    txtEditora.Enabled        := True;
+    txtUnidade.Enabled        := True;
+    JvDBCBcategoria.Enabled   := True;
+    JvDBCBidioma.Enabled      := True;
+    JvDBCBaquisicao.Enabled   := True;
+
+end;
+
+procedure TFrm_inicio.btnCancelarClick(Sender: TObject);
+begin
+    DS_dados.DataSet.Cancel;
+
+    btnEditar.Enabled         := False;
+    bntSalvar.Enabled         := False;
+    btnCancelar               := False;
+
+    txtTitulo.Enabled         := False;
+    txtEditora.Enabled        := False;
+    txtUnidade.Enabled        := False;
+    JvDBCBcategoria.Enabled   := False;
+    JvDBCBidioma.Enabled      := False;
+    JvDBCBaquisicao.Enabled   := False;
+end;
+
+procedure TFrm_inicio.btnEditarClick(Sender: TObject);
+begin
+    DS_dados.DataSet.Edit;
+
+    txtTitulo.Enabled         := True;
+    txtEditora.Enabled        := True;
+    txtUnidade.Enabled        := True;
+    JvDBCBcategoria.Enabled   := True;
+    JvDBCBidioma.Enabled      := True;
+    JvDBCBaquisicao.Enabled   := True;
+end;
+
+// Código do Botão Logout
+
+
+procedure TFrm_inicio.BtnLogoutClick(Sender: TObject);
+begin
+
+  Frm_inicio.DisposeOf;
+  Application.CreateForm(TFTela_login, FTela_login);
+  FTela_login.Show;
+
+end;
+
+procedure TFrm_inicio.btnRelatorioClick(Sender: TObject);
+begin
+  Application.CreateForm(TTFrm_relatorio, TFrm_relatorio);
+  TFrm_relatorio.RLReport1.Preview;
+
+
+end;
+
+// Código para iniciar com todos os campos zerados
+procedure TFrm_inicio.FormCreate(Sender: TObject);
+begin
+
+  btnEditar.Enabled           := False;
+  btnCancelar.Enabled         := False;
+  bntSalvar.Enabled           := False;
+  ProgressBar1.Visible        := False;
+  txtTitulo.Enabled           := False;
+  txtEditora.Enabled          := False;
+  txtUnidade.Enabled          := False;
+  JvDBCBcategoria.Enabled     := False;
+  JvDBCBidioma.Enabled        := False;
+  JvDBCBaquisicao.Enabled     := False;
+
+end;
+
+procedure TFrm_inicio.Image1Click(Sender: TObject);
+begin
+  Frm_previa.ShowModal;
+end;
+
+
+end.

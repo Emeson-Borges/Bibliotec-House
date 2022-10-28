@@ -1,0 +1,17 @@
+program Project2_pessoal;
+
+uses
+  Vcl.Forms,
+  ProjetoPessoal in 'ProjetoPessoal.pas' {FTela_Inicial},
+  TFinicial in 'TFinicial.pas' {Frm_inicio},
+  UniT_relatorio in 'UniT_relatorio.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFTela_Inicial, FTela_Inicial);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

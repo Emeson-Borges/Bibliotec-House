@@ -1,0 +1,21 @@
+program Project2_pessoal;
+
+uses
+  Vcl.Forms,
+  ProjetoPessoal in 'ProjetoPessoal.pas' {FTela_login},
+  TFinicial in 'TFinicial.pas' {Frm_inicio},
+  UniT_relatorio in 'UniT_relatorio.pas' {Form1},
+  TFprevia in 'TFprevia.pas' {Frm_previa},
+  conexao_banco in 'conexao_banco.pas' {DataModule1: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFTela_login, FTela_login);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFrm_previa, Frm_previa);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.Run;
+end.
